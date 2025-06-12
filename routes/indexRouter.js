@@ -19,7 +19,6 @@ indexRouter.get("/", (req, res) => {
   res.render("index", {title: "Mini Messageboard", messages: messages});
 });
 indexRouter.post("/new", (req, res) => {
-  console.log(req.body.messageText);
   messages.push({ text: req.body.messageText, user: req.body.authorName, added: new Date() });
   console.log(messages);
   res.redirect('/')

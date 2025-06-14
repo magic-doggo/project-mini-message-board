@@ -9,9 +9,10 @@ app.use(express.static(assetsPath));
 
 const indexRouter = require("./routes/indexRouter");
 const newRouter = require("./routes/newRouter");
+// const messageRouter = require("./routes/messageRouter");
 app.use("/", indexRouter);
 app.use("/new", newRouter);
-
+// app.use("/message", messageRouter);
 
 const PORT = 3000;
 app.listen(PORT, () => {

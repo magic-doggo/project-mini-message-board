@@ -2,12 +2,13 @@ const pool = require("./pool");
 
 async function getAllMessages() {
   const { rows } = await pool.query("SELECT * FROM messages");
-  console.log(rows)
   return rows;
 }
 
 async function insertMessage(message) {
-  await pool.query("INSERT INTO messages VALUES ($1, $2, $3, $4)", [message.text, message.user, message.added, message.id]);
+  console.log(message);
+  console.log(message.messageText, message.authorName);
+  await pool.query("INSERT INTO messages (text, username, added) VALUES ($1, $2, $3)", [message.messageText, message.authorName, new Date()]); // message.added, message.id
 }
 
 async function deleteAllMessages() {

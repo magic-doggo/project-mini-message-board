@@ -9,7 +9,7 @@ async function getMessages(req, res) {
 }
 
 async function createMessagePost(req, res) {
-  const { message } = req.body;
+  const message = req.body;
   await db.insertMessage(message);
   res.redirect("/");
 }

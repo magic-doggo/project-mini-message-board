@@ -1,4 +1,5 @@
 const express = require("express");
+require('dotenv').config();
 const app = express();
 const path = require("node:path");
 app.set("views", path.join(__dirname, "views"));

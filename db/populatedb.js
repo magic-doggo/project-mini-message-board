@@ -7,13 +7,12 @@ CREATE TABLE IF NOT EXISTS messages (
   id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
   text VARCHAR ( 255 ),
   username VARCHAR (255),
-  added TIMESTAMPTZ,
-  idz int
+  added TIMESTAMPTZ
 );
 
-INSERT INTO messages (text, username, added, idz) VALUES
-  ('Hi there', 'Armando', '2025-06-21T02:23:01.104Z', 0),
-  ('Hello world!', 'Charles', '2025-06-22T06:53:02.304Z', 1);
+INSERT INTO messages (text, username, added) VALUES
+  ('Hi there', 'Armando', '2025-06-21T02:23:01.104Z'),
+  ('Hello world!', 'Charles', '2025-06-22T06:53:02.304Z');
 `;
 
 async function main() {

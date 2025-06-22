@@ -10,7 +10,8 @@
                 <li><%= messages[i].text %></li>
                 <li><%= messages[i].username %></li>
                 <li><%= messages[i].added %></li>
-                <a href="/message/<%= i %>">
+                <li><%= messages[i].id %></li>
+                <a href="/message/<%= messages[i].id %>">
                   <span>Open</span>
                 </a>
             </ul>
